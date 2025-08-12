@@ -40,7 +40,7 @@ Installation & Running
 
 Clone the repository:
 
-git clone https://github.com/sabbas16/movietracker.git
+git clone [https://github.com/sabbas16/movietracker.git](https://github.com/Birkbeck/mobile-computing-reassessment-project-sabbas16)
 
 Open the project in Android Studio.
 
