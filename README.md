@@ -40,7 +40,7 @@ Installation & Running
 
 Clone the repository:
 
-git clone https://github.com/yourusername/movietracker.git
+git clone https://github.com/sabbas16/movietracker.git
 
 Open the project in Android Studio.
 
