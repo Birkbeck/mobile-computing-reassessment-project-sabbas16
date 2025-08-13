@@ -3,15 +3,12 @@ package com.example.movietracker
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.movietracker.data.Movie
 import com.example.movietracker.data.MovieRepository
 import kotlinx.coroutines.launch
 
-class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
-
-    val allMovies = repository.allMovies.asLiveData()
+class AddEditMovieViewModel(private val repository: MovieRepository) : ViewModel() {
 
     fun insert(movie: Movie) = viewModelScope.launch {
         repository.insert(movie)
@@ -26,11 +23,11 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
     }
 }
 
-class MovieViewModelFactory(private val repository: MovieRepository) : ViewModelProvider.Factory {
+class AddEditMovieViewModelFactory(private val repository: MovieRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(MovieViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(AddEditMovieViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return MovieViewModel(repository) as T
+            return AddEditMovieViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
